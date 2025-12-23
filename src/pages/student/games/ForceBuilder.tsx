@@ -364,8 +364,8 @@ export default function ForceBuilder() {
             </div>
 
             {/* Apply / Remove Force */}
-            {forceApplied > 0 && !isMoving && (
-              <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3">
+              {forceApplied > 0 && !isMoving && (
                 <Button
                   onClick={() => applyForce(forceApplied)}
                   size="lg"
@@ -373,19 +373,19 @@ export default function ForceBuilder() {
                 >
                   ➡️ APPLY!
                 </Button>
-                <Button
-                  onClick={() => {
-                    setForceApplied(0);
-                    handleObjectChange(selectedObject);
-                  }}
-                  variant="outline"
-                  size="lg"
-                  className="w-full"
-                >
-                  Reset
-                </Button>
-              </div>
-            )}
+              )}
+              <Button
+                onClick={() => {
+                  setForceApplied(0);
+                  handleObjectChange(selectedObject);
+                }}
+                variant="outline"
+                size="lg"
+                className={cn("w-full", forceApplied === 0 && "col-span-2")}
+              >
+                🔄 Reset
+              </Button>
+            </div>
 
             {/* Result Display */}
             {showResult && (
