@@ -345,7 +345,7 @@ export default function ForceBuilder() {
 
             {/* Force Selection */}
             <div className="space-y-3">
-              <label className="text-sm font-semibold text-gray-700">
+              <label className="text-sm font-semibold text-foreground">
                 Select a Force (Same for all objects)
               </label>
               <div className="grid grid-cols-3 gap-3">
