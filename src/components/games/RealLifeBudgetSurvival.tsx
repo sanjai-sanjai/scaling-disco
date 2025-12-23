@@ -205,7 +205,7 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
           return (
             <Card
               key={expense.id}
-              className={`glass-card border p-5 rounded-xl transition-all ${
+              className={`glass-card border p-4 sm:p-5 rounded-xl transition-all ${
                 decision
                   ? decision === "paid"
                     ? "border-secondary/50 bg-secondary/5"
@@ -215,17 +215,17 @@ export function RealLifeBudgetSurvival({ onComplete }: { onComplete: (score: num
                   : "border-border/60 hover:border-primary/50"
               }`}
             >
-              <div className="flex items-start justify-between mb-2">
-                <div className="text-4xl">{icon}</div>
-                <span className={`text-xs px-2 py-1 rounded ${expense.category === "fixed" ? "bg-destructive/20 text-destructive" : "bg-yellow-500/20 text-yellow-600"}`}>
+              <div className="flex items-start justify-between mb-3">
+                <div className="text-3xl sm:text-4xl">{icon}</div>
+                <span className={`text-xs px-2 py-1 rounded whitespace-nowrap flex-shrink-0 ml-2 ${expense.category === "fixed" ? "bg-destructive/20 text-destructive" : "bg-yellow-500/20 text-yellow-600"}`}>
                   {expense.category === "fixed" ? "Essential" : "Unexpected"}
                 </span>
               </div>
 
-              <h3 className="font-semibold text-foreground mb-1">{expense.name}</h3>
+              <h3 className="font-semibold text-sm sm:text-base text-foreground mb-1">{expense.name}</h3>
               <p className="text-xs text-muted-foreground mb-3">{expense.reason}</p>
 
-              <div className="text-lg font-bold text-accent mb-3">₹{expense.amount}</div>
+              <div className="text-base sm:text-lg font-bold text-accent mb-3">₹{expense.amount}</div>
 
               {!decision ? (
                 <div className="space-y-2">
