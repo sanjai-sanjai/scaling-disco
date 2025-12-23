@@ -193,9 +193,9 @@ export function GameContainer({
       {/* Exit Confirmation Dialog */}
       <Dialog open={showExitConfirm} onOpenChange={setShowExitConfirm}>
         <DialogContent>
+          <DialogTitle>Exit Game?</DialogTitle>
           <div className="space-y-4">
             <div>
-              <h3 className="font-heading text-lg font-semibold">Exit Game?</h3>
               <p className="text-sm text-muted-foreground mt-1">
                 Your progress will be saved. Are you sure you want to exit?
               </p>
