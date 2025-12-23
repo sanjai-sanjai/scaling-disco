@@ -95,33 +95,13 @@ const subjectConfig: Record<string, {
 const learningModes = [
   {
     id: "active",
-    title: "Active Learning",
+    title: "Start learning   ",
     description: "Learn by doing and interacting",
     details: "Complete levels, solve problems, and build skills step by step",
     icon: Target,
     gradient: "from-primary/30 to-primary/10",
     borderColor: "border-primary/40",
     pathKey: "activePath" as const,
-  },
-  {
-    id: "passive",
-    title: "Passive Learning",
-    description: "Learn by reading and understanding",
-    details: "Read chapters, explore concepts, and learn at your own pace",
-    icon: BookOpen,
-    gradient: "from-secondary/30 to-secondary/10",
-    borderColor: "border-secondary/40",
-    pathKey: "passivePath" as const,
-  },
-  {
-    id: "gamified",
-    title: "Gamified Learning",
-    description: "Learn through missions and challenges",
-    details: "Play games, complete missions, and earn rewards while learning",
-    icon: Gamepad2,
-    gradient: "from-accent/30 to-accent/10",
-    borderColor: "border-accent/40",
-    pathKey: "gamifiedPath" as const,
   },
 ];
 
