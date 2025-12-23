@@ -253,6 +253,19 @@ export default function EquationBuilder() {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.1); }
         }
+        @keyframes success-popup-scale {
+          0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+          50% { transform: scale(1.05) translateY(-10px); }
+          100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        @keyframes success-popup-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes confetti-fall {
+          0% { transform: translateY(-10px) rotateZ(0deg); opacity: 1; }
+          100% { transform: translateY(120px) rotateZ(360deg); opacity: 0; }
+        }
         .balance-glow {
           animation: balance-glow 2s ease-in-out infinite;
         }
@@ -264,6 +277,15 @@ export default function EquationBuilder() {
         }
         .atom-pulse {
           animation: atom-pulse 0.5s ease-in-out;
+        }
+        .success-popup {
+          animation: success-popup-scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .success-popup-bounce {
+          animation: success-popup-bounce 0.6s ease-in-out 0.5s;
+        }
+        .confetti {
+          animation: confetti-fall 1s ease-in forwards;
         }
       `}</style>
 
