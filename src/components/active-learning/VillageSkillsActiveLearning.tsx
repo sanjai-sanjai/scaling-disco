@@ -202,7 +202,7 @@ function FarmTaskSequencer() {
         </div>
 
         {/* Sequence Display */}
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border-2 border-dashed border-slate-300">
+        <div className="bg-slate-800/50 border-2 border-dashed border-slate-600/50 p-4 rounded-lg backdrop-blur-sm">
           {sequence.length === 0 ? (
             <div className="text-center text-muted-foreground text-sm">
               Click tasks to build your farming plan
