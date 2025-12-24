@@ -244,10 +244,21 @@ export function StartupSurvival({ onComplete, onBack }: { onComplete: (score: nu
     return (
       <div className="fixed inset-0 bg-gradient-to-b from-background to-background/80 flex flex-col p-4 overflow-auto">
         <div className="max-w-2xl mx-auto w-full space-y-6 py-6">
-          {/* Header */}
-          <div>
-            <h2 className="font-heading text-3xl font-bold text-foreground">🍹 Day {gameState.day} Setup</h2>
-            <p className="text-sm text-muted-foreground">Plan your day carefully</p>
+          {/* Header with Back Button */}
+          <div className="flex items-start justify-between">
+            <div>
+              <h2 className="font-heading text-3xl font-bold text-foreground">🍹 Day {gameState.day} Setup</h2>
+              <p className="text-sm text-muted-foreground">Plan your day carefully</p>
+            </div>
+            {onBack && (
+              <button
+                onClick={handleBackPress}
+                className="p-2 hover:bg-card rounded-lg transition-all text-muted-foreground hover:text-foreground"
+                title="Back to Entrepreneurship"
+              >
+                <ArrowLeft size={24} />
+              </button>
+            )}
           </div>
 
           {/* Cash Display */}
