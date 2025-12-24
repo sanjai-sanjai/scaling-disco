@@ -317,15 +317,26 @@ export function IdeaToIncome({ onComplete, onBack }: { onComplete: (score: numbe
     return (
       <div className="fixed inset-0 bg-gradient-to-b from-background to-background/80 flex flex-col p-4 overflow-auto">
         <div className="max-w-4xl mx-auto w-full space-y-6">
-          {/* Header */}
-          <div className="flex items-center justify-between mb-4">
+          {/* Header with Back Button */}
+          <div className="flex items-start justify-between mb-4">
             <div>
               <h2 className="font-heading text-2xl font-bold text-foreground">🏘️ Explore the Village</h2>
               <p className="text-sm text-muted-foreground">Find 3 problems to solve</p>
             </div>
-            <div className="text-right">
-              <div className="text-3xl font-bold text-badge">{selectedCount}/3</div>
-              <div className="text-xs text-muted-foreground">Selected</div>
+            <div className="text-right flex flex-col items-end gap-4">
+              <div>
+                <div className="text-3xl font-bold text-badge">{selectedCount}/3</div>
+                <div className="text-xs text-muted-foreground">Selected</div>
+              </div>
+              {onBack && (
+                <button
+                  onClick={handleBackPress}
+                  className="p-2 hover:bg-card rounded-lg transition-all text-muted-foreground hover:text-foreground"
+                  title="Back to Entrepreneurship"
+                >
+                  <ArrowLeft size={20} />
+                </button>
+              )}
             </div>
           </div>
 
