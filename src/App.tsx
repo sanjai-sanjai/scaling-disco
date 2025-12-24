@@ -354,12 +354,30 @@ const App = () => (
                     <EntrepreneurshipActiveLearningPage />
                   </ProtectedRoute>
                 } />
+
+                {/* Entrepreneurship Games */}
+                <Route path="/student/entrepreneurship/idea-to-income" element={
+                  <ProtectedRoute allowedRoles={["student"]}>
+                    <IdeaToIncome onComplete={(score) => console.log("Game complete:", score)} />
+                  </ProtectedRoute>
+                } />
+                <Route path="/student/entrepreneurship/startup-survival" element={
+                  <ProtectedRoute allowedRoles={["student"]}>
+                    <StartupSurvival onComplete={(score) => console.log("Game complete:", score)} />
+                  </ProtectedRoute>
+                } />
+                <Route path="/student/entrepreneurship/customer-first" element={
+                  <ProtectedRoute allowedRoles={["student"]}>
+                    <CustomerFirst onComplete={(score) => console.log("Game complete:", score)} />
+                  </ProtectedRoute>
+                } />
+
                 <Route path="/learn/village-skills/levels" element={
                   <ProtectedRoute allowedRoles={["student"]}>
                     <VillageSkillsSubjectPage />
                   </ProtectedRoute>
                 } />
-                
+
                 {/* Passive Learning (Reading Pages) */}
                 <Route path="/learn/:subject/read" element={
                   <ProtectedRoute allowedRoles={["student"]}>
