@@ -35,7 +35,7 @@ const FEEDBACK_BANK: CustomerFeedback[] = [
   { name: "Dev", emoji: "👨", complaint: "Paper quality isn't great", weight: 0.5 }
 ];
 
-export function CustomerFirst({ onComplete }: { onComplete: (score: number) => void }) {
+export function CustomerFirst({ onComplete, onBack }: { onComplete: (score: number) => void; onBack?: () => void }) {
   const [gameState, setGameState] = useState<GameState>({
     phase: "splash",
     round: 1,
@@ -53,6 +53,18 @@ export function CustomerFirst({ onComplete }: { onComplete: (score: number) => v
   const [selectedFeedback, setSelectedFeedback] = useState<string | null>(null);
   const [showingFeedback, setShowingFeedback] = useState(false);
   const [improvementCost, setImprovementCost] = useState(0);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
+
+  const handleBackPress = () => {
+    // Show confirmation only if game is in progress
+    if ((gameState.phase === "selling" && gameState.roundHistory.length > 0) ||
+        (gameState.phase === "feedback" && gameState.roundHistory.length > 0) ||
+        (gameState.phase === "improvement" && gameState.roundHistory.length > 0)) {
+      setShowExitConfirm(true);
+    } else if (onBack) {
+      onBack();
+    }
+  };
 
   const handleStartGame = () => {
     setGameState(prev => ({ ...prev, phase: "selling" }));
